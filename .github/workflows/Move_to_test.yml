@@ -1,0 +1,18 @@
+name: Move to column
+on:
+  issues: 
+    types: [labeled]
+    
+    
+jobs:
+  move_cards:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      with:
+        action-token: ${{ secrets.ACCESS_TOKEN }}
+        project-url: ${{ secrets.CURRENT_PROJECT_URL }}
+        column-name: "Waiting Test"
+        label-name: "waiting-test"
+        columns-to-ignore: "Waiting Test, Resolved"
+    
