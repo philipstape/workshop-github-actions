@@ -12,5 +12,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PAT }}
           comment-template: |
             Release {release_link} addresses this.
-          label-template: waiting-test
+          label-template: waiting test
           skip-label: resolved
