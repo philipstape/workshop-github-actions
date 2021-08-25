@@ -11,7 +11,7 @@ jobs:
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
       with:
         action-token: ${{ secrets.PAT }}
-        project-url: ${{ https://github.com/philipstape/workshop-github-actions/projects/1 }}
+        project-url: https://github.com/philipstape/workshop-github-actions/projects/1
         column-name: "Waiting Test"
         label-name: "Waiting Test"
         columns-to-ignore: "Resolved"
