@@ -13,6 +13,6 @@ jobs:
         action-token: ${{ secrets.ACCESS_TOKEN }}
         project-url: ${{ secrets.CURRENT_PROJECT_URL }}
         column-name: "Waiting Test"
-        label-name: "waiting-test"
+        label-name: "Waiting Test"
         columns-to-ignore: "Waiting Test, Resolved"
     
