@@ -18,6 +18,22 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
+          
+          
+      - name: Create Version
+        id: versioning
+        uses: paulhatch/semantic-version@v4.0.2
+        with:
+          tag_prefix: ""
+          major_pattern: "(MAJOR)"
+          minor_pattern: "(MINOR)"
+          format: "${major}.${minor}.${patch}"
+
+
+
 
       - name: Create Release
         id: create_release
