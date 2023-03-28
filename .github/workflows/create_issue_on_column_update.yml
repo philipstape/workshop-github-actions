@@ -1,0 +1,25 @@
+name: Create Issue on Column Update
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Create issue with references
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          COLUMN_ID: 15681593 # Replace this with the ID of the specific column in your classic project
+        run: node createIssueWithReferences.js
